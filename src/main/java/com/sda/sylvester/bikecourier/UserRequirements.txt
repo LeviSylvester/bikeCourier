@@ -1,0 +1,3 @@
+-aplicatie pentru a face comenzi de curierat rapid pe biciclete si afisarea comenzilor anterioare
+-pentru curieri posibilitatea de a accepta comenzi si afisarea de statisticii privind comenzile onorate
+

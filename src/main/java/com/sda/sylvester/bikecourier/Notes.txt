@@ -1,0 +1,9 @@
+Query<?> query = <-- accepta orice clasa existenta
+
+runmain-compilejartransformtomachinecode-putintarget-runfromthere
+
+rename directory from curier to courier
+
+git add -p te intreaba ce linii de cod vrei sa adaugi
+
+core.autocv crlf search command on google if you want to setup git with crlf line endings
