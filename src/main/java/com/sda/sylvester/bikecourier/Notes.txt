@@ -38,3 +38,10 @@ ne ajuta librarii ex. apache commons - string utils; apache commons - commons co
 
 when you map xy coordinates with autoit tool, add 13 to x and 10 to y
 
+ctrl+b arata intr-o lista unde-i folosit metoda
+
+ctrl+q arata pentru ce e folosit metoda
+
+daca avem java doc deasupra metodei, ctrl+q arata java doc (descrierea deasupra metodei)
+
+git stash daca am o funct. ce nu-mi trebuie momentan, git stash apply imi aduce inapoi
