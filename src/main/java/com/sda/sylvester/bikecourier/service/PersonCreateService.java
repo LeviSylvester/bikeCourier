@@ -12,9 +12,9 @@ public class PersonCreateService {
             Person p = new Person();
             p.setFirstName("Client");
             p.setLastName("" + i);
+            p.setAddress("City");
             personDao.save(p);
         }
     }
-
 
 }
