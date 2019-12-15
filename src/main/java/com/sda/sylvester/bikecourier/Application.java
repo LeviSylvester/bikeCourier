@@ -1,17 +1,20 @@
 package com.sda.sylvester.bikecourier;
 
 import com.sda.sylvester.bikecourier.dao.PersonDao;
+import com.sda.sylvester.bikecourier.model.Person;
 import com.sda.sylvester.bikecourier.service.PersonCreateService;
+import com.sda.sylvester.bikecourier.view.BikeCourierMainView;
 
-public class Application {
+import java.awt.*;
+import java.util.List;
+
+public class Application extends BikeCourierMainView {
 
     public static void main(String[] args) {
-        initializeData();
+//        clearData();
+//        initializeData();
 
-        PersonDao personDao = new PersonDao();
-        personDao.getPersonsFromCity("City", "Client");
-
-        clearData();
+        BikeCourierMainView.launch();
     }
 
     private static void initializeData() {
