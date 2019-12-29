@@ -1,3 +1,8 @@
 -aplicatie pentru a face comenzi de curierat rapid pe biciclete si afisarea comenzilor anterioare
--pentru curieri posibilitatea de a accepta comenzi si afisarea de statisticii privind comenzile onorate
+-pentru curieri posibilitatea de a accepta comenzi si afisarea de statistici privind comenzile onorate
 
+-mainly mobile usage, but possibility to run on desktop too
+-after app is connected with google maps, the courier must have the possibility to organize his route
+-possibility to accept orders only on his route
+-(expert feature) for the app to better estimate arriving times: possibility to set average speed of current deliveries
+ by the (experienced) courier based on his current situation e.g. 7 minutes/client

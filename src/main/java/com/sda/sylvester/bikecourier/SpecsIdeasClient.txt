@@ -1,0 +1,8 @@
+-mobile window
+-enter address (later get address from location and correct if not valid)
+-if no other details are entered, then delivery populates with default data
+-details you may enter phone number, email, details that are columns in person, delivery or packet
+-chat with the courier if questions arise
+-validate fromAddressTextField and toA.T.F
+-place order key puts the order in observable list
+-display when a courier accepted the order

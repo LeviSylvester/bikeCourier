@@ -1,0 +1,7 @@
+-orders entered by client are saved in orderList
+-observable list of table view gets populated by orderList
+-accepted orders are saved to orderList
+-updating db at the end of the day or intentionally
+-today's orders on bottom of app
+-pause button
+-arrange orders' columns by relevance

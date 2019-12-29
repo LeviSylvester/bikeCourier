@@ -9,7 +9,7 @@ import com.sda.sylvester.bikecourier.model.TypeEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeliveryCreateService {
+public class PacketCreateService {
 
     private DeliveryDao deliveryDao;
 

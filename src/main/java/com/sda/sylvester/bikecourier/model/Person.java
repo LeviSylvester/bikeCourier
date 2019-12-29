@@ -18,6 +18,17 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<Delivery> deliveries = new ArrayList<>();
 
+    public Person() {
+
+    }
+
+    public Person(TypeEnum type, String address, String firstName, String lastName) {
+        this.address = address;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.type = type;
+    }
+
     public int getIdPerson() {
         return idPerson;
     }
@@ -78,4 +89,5 @@ public class Person {
     public String toString() {
         return idPerson + " " + firstName + ' ' + lastName + ' ' + address + ' ' + type + ' ' + age;
     }
+
 }

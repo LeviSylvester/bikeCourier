@@ -9,7 +9,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 
-
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
@@ -19,7 +18,6 @@ public class HibernateUtil {
             try {
                 Configuration configuration = new Configuration();
 
-                // Hibernate settings equivalent to hibernate.cfg.xml's properties
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
                 settings.put(Environment.URL, "jdbc:mysql://localhost:3306/bikecourier?serverTimezone=UTC");

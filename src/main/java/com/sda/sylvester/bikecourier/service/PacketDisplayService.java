@@ -6,7 +6,7 @@ import com.sda.sylvester.bikecourier.model.Person;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonDisplayService {
+public class PacketDisplayService {
 
     private PersonDao personDao = new PersonDao();
 

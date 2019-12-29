@@ -4,6 +4,7 @@ import com.sda.sylvester.bikecourier.dao.PersonDao;
 import com.sda.sylvester.bikecourier.model.Person;
 
 public class PersonCreateService {
+
     private PersonDao personDao;
 
     public void createPersons(int number) {
