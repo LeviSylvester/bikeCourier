@@ -5,8 +5,6 @@ import com.sda.sylvester.bikecourier.dao.PersonDao;
 import com.sda.sylvester.bikecourier.service.DeliveryCreateService;
 import com.sda.sylvester.bikecourier.service.PersonCreateService;
 import com.sda.sylvester.bikecourier.view.BikeCourierTableView;
-import com.sda.sylvester.bikecourier.view.ClientView;
-import com.sda.sylvester.bikecourier.view.CourierView;
 
 public class TableViewApp extends BikeCourierTableView {
 

@@ -6,3 +6,5 @@
 -possibility to accept orders only on his route
 -(expert feature) for the app to better estimate arriving times: possibility to set average speed of current deliveries
  by the (experienced) courier based on his current situation e.g. 7 minutes/client
+-at least client app available in 4 languages
+-in perspective think about implementing a ranking system between couriers

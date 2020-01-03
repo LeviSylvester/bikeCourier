@@ -1,7 +1,7 @@
 package com.sda.sylvester.bikecourier.view;
 
 import com.sda.sylvester.bikecourier.model.Order;
-import com.sda.sylvester.bikecourier.service.OrdersProcessingService;
+import com.sda.sylvester.bikecourier.service.Dispatch;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,16 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ClientView extends Application {
-
-
-    @Override
-    public void init() throws Exception {
-        System.out.println("Starting BikeCourier Client...");
-    }
 
     @Override
     public void start(Stage clientStage) throws Exception {
@@ -33,50 +24,53 @@ public class ClientView extends Application {
         clientStage.setX(215);
         clientStage.setY(64);
 
-        Label fromAddressLabel = new Label("From address: ");
-        Label toAddressLabel = new Label("To address: ");
+        Label fromLabel = new Label("From: ");
+        Label toLabel = new Label("To: ");
+        Label termLabel = new Label("Term: ");
+
 
         Text welcomeTitle = new Text("Order a courier");
         welcomeTitle.setFont(Font.font("Veranda", 30));
         welcomeTitle.setFill(Paint.valueOf("#2455d1"));
 
-        TextField fromAddressTextField = new TextField();
-        TextField toAddressTextField = new TextField();
+        TextField fromTextField = new TextField();
+        TextField toTextField = new TextField();
+        TextField termTextField = new TextField();
 
-        Button orderButton = new Button("Place order");
+        Button orderButton = new Button("Add order");
         orderButton.setOnMouseClicked(event -> {
             Order order = new Order();
-            order.setFrom(fromAddressTextField.getText());
-            order.setTo(toAddressTextField.getText());
-            fromAddressTextField.clear();
-            toAddressTextField.clear();
-            OrdersProcessingService.orders.add(order);
-            OrdersProcessingService.refreshCourierOrderList();
+            order.setFrom(fromTextField.getText());
+            order.setTo(toTextField.getText());
+            order.setTerm(termTextField.getText());
+            fromTextField.clear();
+            toTextField.clear();
+            termTextField.clear();
+            Dispatch.ordersObservableList.add(order);
         });
 
-        HBox fromAddressHBox = new HBox();
-        fromAddressHBox.getChildren().addAll(fromAddressLabel, fromAddressTextField);
-        fromAddressHBox.setAlignment(Pos.CENTER);
+        HBox fromHBox = new HBox();
+        fromHBox.getChildren().addAll(fromLabel, fromTextField);
+        fromHBox.setAlignment(Pos.CENTER);
 
-        HBox toAddressHBox = new HBox();
-        toAddressHBox.getChildren().addAll(toAddressLabel, toAddressTextField);
-        toAddressHBox.setAlignment(Pos.CENTER);
+        HBox toHBox = new HBox();
+        toHBox.getChildren().addAll(toLabel, toTextField);
+        toHBox.setAlignment(Pos.CENTER);
+
+        HBox termHBox = new HBox();
+        termHBox.getChildren().addAll(termLabel, termTextField);
+        termHBox.setAlignment(Pos.CENTER);
 
         VBox orderVBox = new VBox();
         orderVBox.setAlignment(Pos.CENTER);
         orderVBox.setSpacing(10);
         orderVBox.setPadding(new Insets(0, 0, 50, 30));
-        orderVBox.getChildren().addAll(welcomeTitle, fromAddressHBox, toAddressHBox, orderButton);
+        orderVBox.getChildren().addAll(welcomeTitle, fromHBox, toHBox, termHBox, orderButton);
 
         Scene scene = new Scene(orderVBox);
 
         clientStage.setScene(scene);
         clientStage.show();
-    }
-
-    @Override
-    public void stop() throws Exception {
-        System.out.println("Stopping BikeCourier App.");
     }
 
 }
