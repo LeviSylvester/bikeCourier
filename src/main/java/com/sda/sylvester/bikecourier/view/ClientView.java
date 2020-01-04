@@ -24,17 +24,17 @@ public class ClientView extends Application {
         clientStage.setX(215);
         clientStage.setY(64);
 
+        Text clientWelcomeText = new Text("Order a courier");
+        clientWelcomeText.setFont(Font.font("Veranda", 30));
+        clientWelcomeText.setFill(Paint.valueOf("#2455d1"));
+
         Label fromLabel = new Label("From: ");
-        Label toLabel = new Label("To: ");
-        Label termLabel = new Label("Term: ");
-
-
-        Text welcomeTitle = new Text("Order a courier");
-        welcomeTitle.setFont(Font.font("Veranda", 30));
-        welcomeTitle.setFill(Paint.valueOf("#2455d1"));
-
         TextField fromTextField = new TextField();
+
+        Label toLabel = new Label("To: ");
         TextField toTextField = new TextField();
+
+        Label termLabel = new Label("Term: ");
         TextField termTextField = new TextField();
 
         Button orderButton = new Button("Add order");
@@ -61,15 +61,15 @@ public class ClientView extends Application {
         termHBox.getChildren().addAll(termLabel, termTextField);
         termHBox.setAlignment(Pos.CENTER);
 
-        VBox orderVBox = new VBox();
-        orderVBox.setAlignment(Pos.CENTER);
-        orderVBox.setSpacing(10);
-        orderVBox.setPadding(new Insets(0, 0, 50, 30));
-        orderVBox.getChildren().addAll(welcomeTitle, fromHBox, toHBox, termHBox, orderButton);
+        VBox clientPlaceOrderVBox = new VBox();
+        clientPlaceOrderVBox.setAlignment(Pos.CENTER);
+        clientPlaceOrderVBox.setSpacing(10);
+        clientPlaceOrderVBox.setPadding(new Insets(0, 0, 50, 30));
+        clientPlaceOrderVBox.getChildren().addAll(clientWelcomeText, fromHBox, toHBox, termHBox, orderButton);
 
-        Scene scene = new Scene(orderVBox);
+        Scene clientScene = new Scene(clientPlaceOrderVBox);
 
-        clientStage.setScene(scene);
+        clientStage.setScene(clientScene);
         clientStage.show();
     }
 

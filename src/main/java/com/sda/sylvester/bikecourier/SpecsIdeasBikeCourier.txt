@@ -1,0 +1,1 @@
+-position of client and courier hboxes' relative to windows size
