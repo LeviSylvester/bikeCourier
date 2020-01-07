@@ -1,1 +1,6 @@
--position of client and courier hboxes' relative to windows size
+-positions of client and courier relative to window's size
+ -separator line between client and courier phone app simulations
+ -text boxes (+ labels) in client arranged by text boxes' right side
+-feedback from courier
+-accept or not
+-estimate courier's arrival time

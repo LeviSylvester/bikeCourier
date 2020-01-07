@@ -1,7 +1,7 @@
 package com.sda.sylvester.bikecourier.view;
 
 import com.sda.sylvester.bikecourier.model.Order;
-import com.sda.sylvester.bikecourier.service.Dispatch;
+import com.sda.sylvester.bikecourier.service.OrderCreateService;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 public class ClientView extends Application {
 
+    private final VBox clientPlaceOrderVBox = new VBox();
+
     @Override
     public void start(Stage clientStage) throws Exception {
         clientStage.setTitle("BikeCourier");
@@ -24,20 +26,30 @@ public class ClientView extends Application {
         clientStage.setX(215);
         clientStage.setY(64);
 
+        buildClientPhoneAppSimulation(clientPlaceOrderVBox);
+
+        Scene clientScene = new Scene(clientPlaceOrderVBox);
+        clientStage.setScene(clientScene);
+        clientStage.show();
+    }
+
+    private void buildClientPhoneAppSimulation(VBox clientPlaceOrderVBox) {
+        clientPlaceOrderVBox.setAlignment(Pos.CENTER);
+        clientPlaceOrderVBox.setSpacing(10);
+
         Text clientWelcomeText = new Text("Order a courier");
         clientWelcomeText.setFont(Font.font("Veranda", 30));
         clientWelcomeText.setFill(Paint.valueOf("#2455d1"));
 
         Label fromLabel = new Label("From: ");
         TextField fromTextField = new TextField();
-
         Label toLabel = new Label("To: ");
+        toLabel.setPadding(new Insets(0,0,0, 14));
         TextField toTextField = new TextField();
-
         Label termLabel = new Label("Term: ");
         TextField termTextField = new TextField();
 
-        Button orderButton = new Button("Add order");
+        Button orderButton = new Button("Place order");
         orderButton.setOnMouseClicked(event -> {
             Order order = new Order();
             order.setFrom(fromTextField.getText());
@@ -46,31 +58,21 @@ public class ClientView extends Application {
             fromTextField.clear();
             toTextField.clear();
             termTextField.clear();
-            Dispatch.ordersObservableList.add(order);
+            OrderCreateService orderCreateService = new OrderCreateService();
+            orderCreateService.createOrder(order);
         });
 
         HBox fromHBox = new HBox();
         fromHBox.getChildren().addAll(fromLabel, fromTextField);
         fromHBox.setAlignment(Pos.CENTER);
-
         HBox toHBox = new HBox();
         toHBox.getChildren().addAll(toLabel, toTextField);
         toHBox.setAlignment(Pos.CENTER);
-
         HBox termHBox = new HBox();
         termHBox.getChildren().addAll(termLabel, termTextField);
         termHBox.setAlignment(Pos.CENTER);
 
-        VBox clientPlaceOrderVBox = new VBox();
-        clientPlaceOrderVBox.setAlignment(Pos.CENTER);
-        clientPlaceOrderVBox.setSpacing(10);
-        clientPlaceOrderVBox.setPadding(new Insets(0, 0, 50, 30));
         clientPlaceOrderVBox.getChildren().addAll(clientWelcomeText, fromHBox, toHBox, termHBox, orderButton);
-
-        Scene clientScene = new Scene(clientPlaceOrderVBox);
-
-        clientStage.setScene(clientScene);
-        clientStage.show();
     }
 
 }

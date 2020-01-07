@@ -19,7 +19,6 @@ public class Person {
     private List<Delivery> deliveries = new ArrayList<>();
 
     public Person() {
-
     }
 
     public Person(TypeEnum type, String address, String firstName, String lastName) {

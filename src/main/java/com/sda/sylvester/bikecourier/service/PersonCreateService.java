@@ -18,4 +18,13 @@ public class PersonCreateService {
         }
     }
 
+    public static void main(String[] args) {
+        PersonDao personDao = new PersonDao();
+        Person person = new Person();
+        person.setFirstName("levi");
+        person.setLastName("sz");
+        person.setAddress("cj");
+        personDao.save(person);
+    }
+
 }

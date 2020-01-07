@@ -1,7 +1,16 @@
 package com.sda.sylvester.bikecourier.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idOrder;
     private String from;
     private String to;
     private String term;
@@ -47,4 +56,5 @@ public class Order {
                 ", term='" + term + '\'' +
                 '}';
     }
+
 }

@@ -3,6 +3,7 @@ package com.sda.sylvester.bikecourier.util;
 import java.util.Properties;
 
 import com.sda.sylvester.bikecourier.model.Delivery;
+import com.sda.sylvester.bikecourier.model.Order;
 import com.sda.sylvester.bikecourier.model.Packet;
 import com.sda.sylvester.bikecourier.model.Person;
 import org.hibernate.SessionFactory;
@@ -30,6 +31,7 @@ public class HibernateUtil {
                 configuration.addAnnotatedClass(Person.class);
                 configuration.addAnnotatedClass(Delivery.class);
                 configuration.addAnnotatedClass(Packet.class);
+                configuration.addAnnotatedClass(Order.class);
 
                 sessionFactory = configuration.buildSessionFactory();
             } catch (Exception e) {
